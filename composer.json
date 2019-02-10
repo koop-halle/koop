@@ -1,0 +1,92 @@
+{
+  "name": "koop-halle/koop",
+  "description": "",
+  "minimum-stability": "dev",
+  "license": "some kind of open source",
+  "authors": [
+    {
+      "name": "wolxXx",
+      "email": "devops@wolxXx.de"
+    },
+    {
+      "name": "xong",
+      "email": "robert.rupf@maumha.de"
+    }
+  ],
+  "support": {
+    "email": "robert.rupf@maumha.de",
+    "issues": "https://github.com/koop-halle/koop/issues"
+  },
+  "config": {
+    "secure-http": false
+  },
+  "autoload": {
+    "psr-4": {
+      "Application\\": "Application/"
+    }
+  },
+  "extra": {
+    "mouf": {
+      "nodejs": {
+        "version": "8.11.2",
+        "targetDir": "vendor/nodejs/nodejs",
+        "forceLocal": true
+      }
+    }
+  },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/wolxXx/Translate"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wolxXx/form"
+    }
+  ],
+  "require": {
+    "beberlei/assert": "3.1.*",
+    "beberlei/doctrineextensions": "1.*",
+    "doctrine/migrations": "@stable",
+    "doctrine/orm": "@stable",
+    "endroid/qr-code": "3.2.5",
+    "ext-dom": "*",
+    "ext-imap": "*",
+    "ext-intl": "*",
+    "ext-json": "*",
+    "ext-mysqli": "*",
+    "ext-pdo": "*",
+    "ext-simplexml": "*",
+    "fzaninotto/faker": "@stable",
+    "gedmo/doctrine-extensions": "@stable",
+    "gumlet/php-image-resize": "@stable",
+    "jenssegers/blade": "@stable",
+    "leankoala/healthfoundation": "*",
+    "leafo/scssphp": "@stable",
+    "monolog/monolog": "@stable",
+    "oyejorge/less.php": "@stable",
+    "paquettg/php-html-parser": "2.*",
+    "pelago/emogrifier": "@stable",
+    "phing/phing": "@stable",
+    "php": ">=7.2.0",
+    "phpmailer/phpmailer": "@stable",
+    "php-di/php-di": "@stable",
+    "phpunit/phpunit": "@stable",
+    "plasticbrain/php-flash-messages": "@stable",
+    "silex/silex": "@stable",
+    "symfony/validator": "@stable",
+    "symfony/yaml": "@stable",
+    "symfony/console": "@stable",
+    "symfony/cache": "@stable",
+    "symfony/event-dispatcher": "@stable",
+    "symfony/filesystem": "@stable",
+    "symfony/translation": "@stable",
+    "ttskch/pagination-service-provider": "@stable",
+    "twig/extensions": "@stable",
+    "twig/twig": "@stable",
+    "delfimov/translate": "*",
+    "wolxxx/form": "*",
+    "zendframework/zend-filter": "@stable",
+    "zendframework/zend-session": "@stable"
+  }
+}
