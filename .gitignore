@@ -6,4 +6,4 @@ cache/
 log/
 
 
-doctrineConfig.php
+/doctrineConfig.php
