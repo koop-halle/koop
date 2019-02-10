@@ -64,6 +64,7 @@
     "leankoala/healthfoundation": "*",
     "leafo/scssphp": "@stable",
     "monolog/monolog": "@stable",
+    "mouf/nodejs-installer": "@stable",
     "oyejorge/less.php": "@stable",
     "paquettg/php-html-parser": "2.*",
     "pelago/emogrifier": "@stable",
