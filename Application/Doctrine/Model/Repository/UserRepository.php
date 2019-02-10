@@ -6,11 +6,11 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityRepository;
 
 /**
- * Class UserrRepository
+ * Class UserRepository
  *
  * @package Application\Doctrine\Model\Repository
  */
-class UserrRepository extends EntityRepository
+class UserRepository extends EntityRepository
 {
     use \Application\Doctrine\Share\Timestampable, \Application\Doctrine\Share\Blameable;
 

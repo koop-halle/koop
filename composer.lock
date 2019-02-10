@@ -7262,7 +7262,7 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wolxXx/form.git",
+                "url": "git@github.com:wolxXx/form.git",
                 "reference": "c54a57a09f157ec421370ea810953a8680fbcb47"
             },
             "dist": {
@@ -7305,9 +7305,6 @@
                 }
             ],
             "description": "A basic framework agnostic form building package with a few extra niceties like remembering old input and retrieving error messages. Forked from https://github.com/adamwathan/form",
-            "support": {
-                "source": "https://github.com/wolxXx/form/tree/v0.11.0"
-            },
             "time": "2019-02-10T08:46:41+00:00"
         },
         {
