@@ -1,10 +1,12 @@
 .idea/
 
-vendor/
-
 cache/
 log/
+public/node_modules/
+vendor/
 
-
-/doctrineConfig.php
+/app.log
 /build.xml
+/applicationConfiguration.php
+/doctrineConfig.php
+/error.log
