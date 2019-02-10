@@ -51,7 +51,9 @@ try {
      */
 
     $dynamicTables = [
-        \Application\Doctrine\Model\User::class => \Application\Doctrine\Model\User::TABLE_NAME,
+        \Application\Doctrine\Model\User::class        => \Application\Doctrine\Model\User::TABLE_NAME,
+        \Application\Doctrine\Model\Group::class       => \Application\Doctrine\Model\Group::TABLE_NAME,
+        \Application\Doctrine\Model\UserInGroup::class => \Application\Doctrine\Model\UserInGroup::TABLE_NAME,
     ];
     foreach ($dynamicTables as $model => $tableName) {
         $entityManager

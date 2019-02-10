@@ -1,69 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project name="Koop" default="noop">
     <target name="noop" description="list the available targets">
-        <exec command="./phing -q -f ${phing.file} -l" passthru="true"/>
+        <exec command=".\phing -q -f ${phing.file} -l" passthru="true"/>
     </target>
 
 
     <target name="latest" description="update latest">
-        <exec passthru="true" checkreturn="true" command="git checkout public/dist/" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="git checkout public\dist\" dir=".\"/>
         <phingcall target="updateRepository"/>
-        <exec passthru="true" checkreturn="true" command="cp maintenance.php index.php" dir="./"/>
-        <exec passthru="true" checkreturn="true" command="php composer.phar install" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="cp maintenance.php index.php" dir=".\"/>
+        <exec passthru="true" checkreturn="true" command="php composer.phar install" dir=".\"/>
         <phingcall target="npm"/>
         <phingcall target="bowerUpdate"/>
         <phingcall target="createNeededDirectories"/>
         <phingcall target="changeDirectoryOwner"/>
-        <phingcall target="db"/>
-        <exec passthru="true" checkreturn="true" command="git checkout index.php" dir="./"/>
+        <phingcall target="dbWindows"/>
+        <exec passthru="true" checkreturn="true" command="git checkout index.php" dir=".\"/>
     </target>
 
-    <target name="db" description="runs migrations, updates models and dependency">
-        <exec passthru="true" checkreturn="true" command="./vendor/bin/doctrine-migrations migrations:migrate --no-interaction --verbose" dir="./"/>
+    <target name="dbWindows" description="runs migrations, updates models and dependency">
+        <exec passthru="true" checkreturn="true" command=".\vendor\bin\doctrine-migrations.bat migrations:migrate --no-interaction --verbose" dir=".\"/>
         <phingcall target="dbDry" />
-        <exec passthru="true" checkreturn="true" command="php vendor/bin/doctrine orm:schema-tool:update --force --verbose" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="vendor\bin\doctrine.bat orm:schema-tool:update --force --verbose" dir=".\"/>
     </target>
 
     <target name="dbDry" description="runs migrations, updates models and dependency">
-        <exec passthru="true" checkreturn="true" command="php vendor/bin/doctrine orm:schema-tool:update --dump-sql --verbose" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="vendor\bin\doctrine.bat orm:schema-tool:update --dump-sql --verbose" dir=".\"/>
     </target>
 
     <target name="dbFull" description="runs migrations, updates models and dependency">
-        <exec passthru="true" checkreturn="true" command="php vendor/bin/doctrine orm:schema-tool:update --complete --dump-sql --verbose" dir="./"/>
-        <exec passthru="true" checkreturn="true" command="php vendor/bin/doctrine orm:schema-tool:update --complete --force --verbose" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="vendor\bin\doctrine.bat orm:schema-tool:update --complete --dump-sql --verbose" dir=".\"/>
+        <exec passthru="true" checkreturn="true" command="vendor\bin\doctrine.bat orm:schema-tool:update --complete --force --verbose" dir=".\"/>
     </target>
 
     <target name="generateMigration" description="generates a new migration based on changes in models">
-        <exec passthru="true" checkreturn="true" command="./vendor/bin/doctrine-migrations migrations:diff" dir="./"/>
+        <exec passthru="true" checkreturn="true" command=".\vendor\bin\doctrine-migrations migrations:diff" dir=".\"/>
     </target>
 
     <target name="bower" description="installs bower vendors">
-        <exec passthru="true" checkreturn="true" command="./node_modules/.bin/bower install --allow-root"
-              dir="./public"/>
+        <exec passthru="true" checkreturn="true" command=".\node_modules\.bin\bower install --allow-root"
+              dir=".\public"/>
     </target>
 
     <target name="bowerUpdate" description="updates bower vendors">
-        <exec passthru="true" checkreturn="true" command="./node_modules/.bin/bower update --allow-root"
-              dir="./public"/>
+        <exec passthru="true" checkreturn="true" command=".\node_modules\.bin\bower update --allow-root"
+              dir=".\public"/>
     </target>
 
     <target name="bowerCleaned" description="cleans and forces bower vendors">
-        <exec passthru="true" checkreturn="true" command="./node_modules/.bin/bower --allow-root cache clean" dir="./public"/>
-        <exec passthru="true" checkreturn="true" command="./node_modules/.bin/bower --allow-root install --force" dir="./public"/>
-        <exec passthru="true" checkreturn="true" command="./node_modules/.bin/bower --allow-root prune" dir="./public"/>
+        <exec passthru="true" checkreturn="true" command=".\node_modules\.bin\bower --allow-root cache clean" dir=".\public"/>
+        <exec passthru="true" checkreturn="true" command=".\node_modules\.bin\bower --allow-root install --force" dir=".\public"/>
+        <exec passthru="true" checkreturn="true" command=".\node_modules\.bin\bower --allow-root prune" dir=".\public"/>
     </target>
 
     <target name="npm" description="installs npm vendors">
-        <exec passthru="true" checkreturn="true" command="rm package-lock.json" dir="./public"/>
-        <exec passthru="true" checkreturn="true" command="npm install" dir="./public"/>
+        <exec passthru="true" checkreturn="true" command="rm package-lock.json" dir=".\public"/>
+        <exec passthru="true" checkreturn="true" command="npm install" dir=".\public"/>
     </target>
 
     <target name="npmUpdate" description="updates npm vendors">
-        <exec passthru="true" checkreturn="true" command="npm update" dir="./public"/>
+        <exec passthru="true" checkreturn="true" command="npm update" dir=".\public"/>
     </target>
 
     <target name="npmProduction" description="installs npm vendors">
-        <exec passthru="true" checkreturn="true" command="npm install --production" dir="./public"/>
+        <exec passthru="true" checkreturn="true" command="npm install --production" dir=".\public"/>
     </target>
 
     <target name="createNeededDirectories">
@@ -71,23 +71,23 @@
         <mkdir dir="files"/>
     </target>
 
-    <target name="changeDirectoryOwner" description="changes the owner of /var/vhosts">
-        <exec passthru="true" checkreturn="true" command="sudo chown -cR www-data:www-data /var/vhosts" dir="./"/>
+    <target name="changeDirectoryOwner" description="changes the owner of \var\vhosts">
+        <exec passthru="true" checkreturn="true" command="sudo chown -cR www-data:www-data \var\vhosts" dir=".\"/>
     </target>
 
     <target name="updateRepository" description="updates the repository">
-        <exec passthru="true" checkreturn="true" command="git pull origin master" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="git pull origin master" dir=".\"/>
     </target>
 
     <target name="prepareUnitTestDatabase">
-        <exec passthru="true" checkreturn="true" command="php prepareUnitTestDatabse.php" dir="./"/>
+        <exec passthru="true" checkreturn="true" command="php prepareUnitTestDatabse.php" dir=".\"/>
     </target>
 
     <target name="resetCache">
-        <exec passthru="true" checkreturn="false" command="sudo rm -rf cache" dir="./"/>
-        <exec passthru="true" checkreturn="true" command="mkdir cache" dir="./"/>
-        <exec passthru="true" checkreturn="true" command="sudo chmod -cR 777 cache" dir="./"/>
-        <exec passthru="true" checkreturn="false" command="sudo rm /tmp/__CG__ApplicationDoctrineModel*" dir="./"/>
+        <exec passthru="true" checkreturn="false" command="sudo rm -rf cache" dir=".\"/>
+        <exec passthru="true" checkreturn="true" command="mkdir cache" dir=".\"/>
+        <exec passthru="true" checkreturn="true" command="sudo chmod -cR 777 cache" dir=".\"/>
+        <exec passthru="true" checkreturn="false" command="sudo rm \tmp\__CG__ApplicationDoctrineModel*" dir=".\"/>
     </target>
 
     <target name="runTest" description="runs specified (-Dmodule=Admin) unit tests">
@@ -97,8 +97,8 @@
         <echo>running tests for module "${module}"</echo>
         <echo> </echo>
         <exec passthru="true" checkreturn="true"
-              command=" ./vendor/phpunit/phpunit/phpunit  --configuration Application/Test/phpunit.xml --coverage-html Application/Test/coverage --coverage-clover Application/Test/coverage/coverage.clover"
-              dir="./"/>
+              command=" .\vendor\phpunit\phpunit\phpunit  --configuration Application\Test\phpunit.xml --coverage-html Application\Test\coverage --coverage-clover Application\Test\coverage\coverage.clover"
+              dir=".\"/>
         <phingcall target="resetCache"/>
     </target>
 

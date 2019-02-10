@@ -23,4 +23,16 @@ class RepositoryLocator
             ;
     }
 
+    /**
+     * @return \Application\Doctrine\Model\Repository\GroupRepository
+     */
+    public static function getGroup()
+    {
+        return \Application\Util\DependencyContainer::getInstance()
+                                                    ->getEntityManager()
+                                                    ->getRepository(
+                                                        \Application\Doctrine\Model\Group::class
+                                                    )
+            ;
+    }
 }
