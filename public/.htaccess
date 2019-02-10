@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_URI} ^(.*)$
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_URI} !\.(css|less|gif|ico|jpg|jpeg|js|png|swf|txt|tar|tar.gz|zip|rar|7z|webm|flv|mp4|mpeg)$
+RewriteRule .* index.php?url=%1&%{QUERY_STRING} [L]
+
+Header set Access-Control-Allow-Origin "*"
+Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"

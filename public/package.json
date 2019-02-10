@@ -1,0 +1,40 @@
+{
+  "name": "koop-halle-koop",
+  "version": "0.0.1",
+  "description": "koop-halle/koop",
+  "main": "gruntfile.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "authors": [
+    "wolxXx <devops@wolxXx.de>",
+    "xong <robert.rupf@maumha.de>"
+  ],
+  "license": "ISC",
+  "dependencies": {
+    "bower": "*",
+    "grunt": "*",
+    "grunt-babel": "*",
+    "grunt-cli": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-es6-transpiler": "*",
+    "grunt-modernizr": "*",
+    "zombie": "*",
+    "mocha": "*",
+    "jasmine": "*",
+    "less": "*",
+    "react": "*",
+    "react-dom": "*",
+    "webpack": "*",
+    "lodash": "*",
+    "babel-cli": "*",
+    "babel-loader": "*",
+    "babel-polyfill": "*",
+    "babel-preset-env": "*",
+    "babel-preset-es2015": "*",
+    "babel-preset-react": "*"
+  }
+}

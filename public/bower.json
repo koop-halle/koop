@@ -1,0 +1,39 @@
+{
+  "name": "koop-halle/koop",
+  "description": "koop-halle/koop.",
+  "main": "gruntfile.js",
+  "authors": [
+    "wolxXx <devops@wolxXx.de>",
+    "xong <robert.rupf@maumha.de>"
+  ],
+  "license": "propretary",
+  "moduleType": [],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "3.*",
+    "chelsea": "*",
+    "datatables": "1.10.*",
+    "dropzone": "5.1.*",
+    "font-awesome": "5.*",
+    "fullcalendar": "3.9.*",
+    "intro.js": "2.*",
+    "jquery-ui": "1.12.*",
+    "js-cookie": "2.2.*",
+    "highcharts": "6.1.*",
+    "masonry": "4.2.*",
+    "jquery-maskmoney": "3.0.*",
+    "moment": "2.*",
+    "mustache.js": "2.2.*",
+    "select2": "4.0.3",
+    "Sortable": "1.4.*",
+    "tinymce": "4.3.*",
+    "tinymce-": "4.3.*",
+    "bower/tinymce-i18n": "4.0.0"
+  }
+}
